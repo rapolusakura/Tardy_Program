@@ -13,21 +13,21 @@ document.getElementById('name').onkeydown = function(event) {
         document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
         $.get('date.txt', function(date) {
-          // $('#message').html('<p>Text-file:</p>' + date + '<p>Today:<br/>' + today + '</p>');
+          //$('#message').html('<p>Text-file:</p>' + date + '<p>Today:<br/>' + today + '</p>');
           //checks if today's date is the same as the date written into the text file
-          // if (today != date) {
-          //   //creates new spreadsheets, loads new student file, writes today's date into date.txt
-          //   $.post("quickstart.php", {
-          //     name: name
-          //   }, function(sheetID) {
-          //     addRecord(sheetID);
-          //     $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
-          //   });
-          // } else {
-          $.get('SpreadsheetID.txt', function(sid) {
-            addRecord(sid); // Enter your Google Sheet ID here - only field that changes daily
-          }, 'text');
-          //}
+          if (today != date) {
+            //creates new spreadsheets, loads new student file, writes today's date into date.txt
+            $.post("quickstart.php", {
+              name: name
+            }, function(sheetID) {
+              addRecord(sheetID);
+              $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
+            });
+          } else {
+            $.get('SpreadsheetID.txt', function(sid) {
+              addRecord(sid); // Enter your Google Sheet ID here - only field that changes daily
+            }, 'text');
+          }
         });
       });
       //prints textfile
@@ -52,9 +52,9 @@ function addRecord(sid) {
   $.get('Sheets.txt', function(data) {
     async: false;
     var gs_sid = sid;
-    var gs_clid = '501778124774-viok30aqokaqemr84ar82uasn1nmhodj.apps.googleusercontent.com'; // Enter your API Client ID here
-    var gs_clis = 'hi9l5WixbfN0vHE7avdsRN3W'; // Enter your API Client Secret here
-    var gs_rtok = '1/HA18EjXasRx2dae3oNrFLmyxqf4n2rMupV3yMnU1f2w'; // Enter your OAuth Refresh Token here
+    var gs_clid = '64846370604-7gnht5k99v2qt9fbrbqsqtka294jjqod.apps.googleusercontent.com'; // Enter your API Client ID here
+    var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
+    var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
     var gs_atok = false;
     var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     var gs_body = '{"majorDimension":"ROWS", "values":[[' + data + ']]}';

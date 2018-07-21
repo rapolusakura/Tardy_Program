@@ -78,7 +78,7 @@ $client = getClient();
 $driveService = new Google_Service_Drive($client);
 
 // Creates the spreadsheet into the TeamDrive folder
-$folderId = '1BO0Puye3Dq7rlhNND8i4jLTaaTXzB0pS';
+$folderId = '0B6bfTKkhBq23anA2ejNZYzhEQVE';
 $fileMetadata = new Google_Service_Drive_DriveFile(array(
     'name' => date("m-d-Y"),
     'mimeType' => 'application/vnd.google-apps.spreadsheet',
