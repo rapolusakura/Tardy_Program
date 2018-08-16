@@ -12,16 +12,42 @@ define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
 define('SCOPES', implode(' ', array(
   Google_Service_Drive::DRIVE_FILE)
 ));
-// Orginally supposed to be a command-line application, but I commented it out and it works
-// if (php_sapi_name() != 'cli') {
-//   throw new Exception('This application must be run on the command line.');
-// }
 
-/**
- * Returns an authorized API client.
- * @return Google_Client the authorized client object
- */
+// Get the API client and construct the service object.
+$client = getClient();
+$driveService = new Google_Service_Drive($client);
 
+// Creates the spreadsheet into the TeamDrive folder
+$folderId = '0B6bfTKkhBq23anA2ejNZYzhEQVE';
+$fileMetadata = new Google_Service_Drive_DriveFile(array(
+    'name' => date("m-d-Y"),
+    'mimeType' => 'application/vnd.google-apps.spreadsheet',
+    'parents' => array($folderId)
+));
+$file = $driveService->files->create($fileMetadata, array(
+    'uploadType' => 'resumable',
+    'fields' => 'id'));
+printf($file->id);
+
+// Write newly created SpreadSheet ID into a textfile to be accessed by print.js
+$myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
+$txt = $file->id;
+fwrite($myfile, $txt);
+fclose($myfile);
+
+// Write today's date into date.txt to determine current spreadsheets
+$myfile = fopen("date.txt", "w") or die("Unable to open file!");
+$txt = date("m-d-Y");
+fwrite($myfile, $txt);
+fclose($myfile);
+
+// Imports the data from the student table
+require 'connect.php';
+$conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
+mysqli_close($conn);
+
+
+//helper functions
 function getClient() {
   $client = new Google_Client();
   $client->setApplicationName(APPLICATION_NAME);
@@ -72,38 +98,5 @@ function expandHomeDirectory($path) {
   }
   return str_replace('~', realpath($homeDirectory), $path);
 }
-
-// Get the API client and construct the service object.
-$client = getClient();
-$driveService = new Google_Service_Drive($client);
-
-// Creates the spreadsheet into the TeamDrive folder
-$folderId = '0B6bfTKkhBq23anA2ejNZYzhEQVE';
-$fileMetadata = new Google_Service_Drive_DriveFile(array(
-    'name' => date("m-d-Y"),
-    'mimeType' => 'application/vnd.google-apps.spreadsheet',
-    'parents' => array($folderId)
-));
-$file = $driveService->files->create($fileMetadata, array(
-    'uploadType' => 'resumable',
-    'fields' => 'id'));
-printf($file->id);
-
-// Write newly created SpreadSheet ID into a textfile to be accessed by print.js
-$myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
-$txt = $file->id;
-fwrite($myfile, $txt);
-fclose($myfile);
-
-// Write today's date into date.txt to determine current spreadsheets
-$myfile = fopen("date.txt", "w") or die("Unable to open file!");
-$txt = date("m-d-Y");
-fwrite($myfile, $txt);
-fclose($myfile);
-
-// Imports the data from the student table
-require 'connect.php';
-$conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
-mysqli_close($conn);
 
 ?>

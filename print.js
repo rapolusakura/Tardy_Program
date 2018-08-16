@@ -13,7 +13,6 @@ document.getElementById('name').onkeydown = function(event) {
         document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
         $.get('date.txt', function(date) {
-          //$('#message').html('<p>Text-file:</p>' + date + '<p>Today:<br/>' + today + '</p>');
           //checks if today's date is the same as the date written into the text file
           if (today != date) {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt
@@ -29,21 +28,19 @@ document.getElementById('name').onkeydown = function(event) {
             }, 'text');
           }
         });
-      });
-      //prints textfile
-      setTimeout(function() {
-        document.getElementsByName('name').focus();
-      }, 1);
-      var text_to_print = open('DVHS_Tardy_Registration.txt');
-      text_to_print.onload = function() {
+        //prints textfile
+        var text_to_print = open('DVHS_Tardy_Registration.txt');
+        text_to_print.onload = function() {
 
-        text_to_print.print();
-        // var time = new Date() - start;
-        // $('#message').html(time);
+          text_to_print.print();
+          setTimeout(function() {
+            text_to_print.close();
+          }, 1);
+        };
         setTimeout(function() {
-          text_to_print.close();
+          document.getElementsByName('name').focus();
         }, 1);
-      };
+      });
     }
   }
 };
