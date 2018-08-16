@@ -44,7 +44,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 		<h4><div id="message"></div></h4>
   </div>
 </div>
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
