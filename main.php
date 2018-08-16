@@ -45,18 +45,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
 </div>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA-Z5rzhwqwmX9HNSoF0dDes4VGdgFcqKo",
-    authDomain: "intrepid-vista-188201.firebaseapp.com",
-    databaseURL: "https://intrepid-vista-188201.firebaseio.com",
-    projectId: "intrepid-vista-188201",
-    storageBucket: "",
-    messagingSenderId: "908096432316"
-  };
-  firebase.initializeApp(config);
-</script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
