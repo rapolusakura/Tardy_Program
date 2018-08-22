@@ -37,13 +37,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
   <div class="column right">
 		<h5 class = "nonprint">Enter Student ID#:</h5>
-		<input style  = "padding: 16px" onkeyup="search()" autofocus class = "nonprint search" type="text" id = "name" name = "name" autocomplete = "off" placeholder="ex. 123456"></input>
+		<input style  = "padding: 16px" onkeyup="search()" onkeypress="addSheet()" autofocus class = "nonprint search" type="text" id = "name" name = "name" autocomplete = "off" placeholder="ex. 123456"></input>
 		<br></br><pre><h5><div style = "printer" id ="name-data"></div></h5></pre>
 		<input type="submit" id = "print" class = "nonprint" style = "padding: 16px" value = "Print Slip"></input><br></br>
 		<h4><div class = "nonprint" id ="success"></div></h4>
 		<h4><div id="message"></div></h4>
   </div>
 </div>
+<script type="text/javascript" src="sheets.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
