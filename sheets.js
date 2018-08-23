@@ -14,7 +14,7 @@ function addSheet() {
     var gs_atok = false;
     //https://sheets.googleapis.com/v4/spreadsheets/1_AwVDOGqwkBMoANa_Z28dJI0woANSuLgZb13bx5ynfE:batchUpdate
     var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + ':batchUpdate';
-    var gs_body = '{"requests":[{"addSheet":{"properties":{"title":"hahha bitch"}}}]}';
+    var gs_body = '{"requests":[{"addSheet":{"properties":{"title":"' + new Date() + '"}}}]}';
     // HTTP Request Token Refresh
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://www.googleapis.com/oauth2/v4/token?client_id=' + gs_clid + '&client_secret=' + gs_clis + '&refresh_token=' + gs_rtok + '&grant_type=refresh_token');
