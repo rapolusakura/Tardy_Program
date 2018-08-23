@@ -18,8 +18,8 @@ document.getElementById('name').onkeydown = function(event) {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt
             $.post("quickstart.php", {
               name: name
-            }, function(sheetID) {
-              addRecord(sheetID);
+            }, function(spreadsheetID) {
+              addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {
@@ -53,7 +53,7 @@ function addRecord(sid) {
     var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
     var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
     var gs_atok = false;
-    var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
+    var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/Sheet2!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     var gs_body = '{"majorDimension":"ROWS", "values":[[' + data + ']]}';
     // HTTP Request Token Refresh
     var xhr = new XMLHttpRequest();

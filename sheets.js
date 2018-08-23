@@ -3,11 +3,11 @@
 //   addSheet()
 // };
 
-function addSheet() {
+function addSheet(sid) {
   console.log("Hello")
   $.get('Sheets.txt', function(data) {
     async: false;
-    var gs_sid = '1_AwVDOGqwkBMoANa_Z28dJI0woANSuLgZb13bx5ynfE';
+    var gs_sid = sid
     var gs_clid = '64846370604-7gnht5k99v2qt9fbrbqsqtka294jjqod.apps.googleusercontent.com'; // Enter your API Client ID here
     var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
     var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
