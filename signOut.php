@@ -19,7 +19,7 @@ header {
 		float:left;
 }
 body {
-		background: linear-gradient(to bottom, #1E90FF, #99ddff, #e6e6e6) fixed;
+		background: linear-gradient(to bottom, #ffa500, #ffff00, #ffffff) fixed;
 }
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 8px}
@@ -29,7 +29,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	<img class = "nonprint" src="banner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Tardy Registration</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
-	<input type="button" id = "print" class = "nonprint" style = "padding: 16px" value = "SIGN OUT" onclick="window.location.href='signOut.php'"></input><br></br>
+	<input type="button" id = "print" class = "nonprint" style = "padding: 16px" value = "SIGN IN" onclick="window.location.href='main.php'"></input><br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
 			<h4><div align="left"></div></h4>
