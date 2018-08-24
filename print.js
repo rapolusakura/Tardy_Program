@@ -73,6 +73,7 @@ function setUpSheets(sid) {
       xxhr.onload = function() {
         if (xxhr.status == 200) {
           // Success
+          addRecord(sid);
           //$('#message').html('<p>Row Added!</p>');
         } else {
           // Fail
