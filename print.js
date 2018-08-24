@@ -19,6 +19,7 @@ document.getElementById('name').onkeydown = function(event) {
             $.post("quickstart.php", {
               name: name
             }, function(spreadsheetID) {
+              //when you get this callback, call the setUpSheets method and then in that call back, add the record.
               addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
@@ -44,6 +45,10 @@ document.getElementById('name').onkeydown = function(event) {
     }
   }
 };
+
+function setUpSheets(sid) {
+
+}
 
 function addRecord(sid) {
   $.get('Sheets.txt', function(data) {

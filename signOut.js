@@ -34,6 +34,10 @@ document.getElementById('name').onkeydown = function(event) {
   }
 };
 
+function setUpSheets(sid) {
+
+}
+
 function addRecord(sid) {
   $.get('Sheets.txt', function(data) {
     async: false;
