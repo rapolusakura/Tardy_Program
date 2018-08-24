@@ -1,5 +1,5 @@
 <?php
-	require '../Services/connect.php';
+	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
 	//adds student to late table
 	$result = $conn->query("
@@ -18,13 +18,13 @@
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			//format entry for Google Sheets
-			$myfile = fopen("../Sheets.txt", "w") or die("Unable to open file!");
+			$myfile = fopen("Sheets.txt", "w") or die("Unable to open file!");
 			$txt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
 			fwrite($myfile, $txt);
 			fclose($myfile);
 
 			//write to textfile for offline access
-			$fileName = '../Late_Student_Records/'.date('m-d-Y').'.txt';
+			$fileName = 'Late_Student_Records/'.date('m-d-Y').'.txt';
 			$myfile = fopen($fileName, "a+") or die("Unable to open file!");
 			$txt = "IN: ". date("Y-m-d"). "\t". date("h:i:sa"). "\t". $row["grade"]. "\t". $row["first_name"]. "\t" . $row["last_name"]. "\t" .$_POST['name']. "\r\n";
 			fwrite($myfile, $txt);
