@@ -27,7 +27,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body>
 	<img class = "nonprint" src="banner.png"></img>
-	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Tardy Registration</h1>
+	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Sign Out</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
 	<input type="button" id = "print" class = "nonprint" style = "padding: 16px" value = "SIGN IN" onclick="window.location.href='main.php'"></input><br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
@@ -40,7 +40,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 		<h5 class = "nonprint">Enter Student ID#:</h5>
 		<input style  = "padding: 16px" onkeyup="search()" autofocus class = "nonprint search" type="text" id = "name" name = "name" autocomplete = "off" placeholder="ex. 123456"></input>
 		<br></br><pre><h5><div style = "printer" id ="name-data"></div></h5></pre>
-		<input type="submit" id = "print" class = "nonprint" style = "padding: 16px" value = "Print Slip"></input><br></br>
 		<h4><div class = "nonprint" id ="success"></div></h4>
 		<h4><div id="message"></div></h4>
   </div>
@@ -48,7 +47,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <script type="text/javascript" src="sheets.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src = "print.js"></script>
 <img src = "logo.png" class = "nonprint"></img>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
