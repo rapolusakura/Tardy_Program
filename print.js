@@ -50,9 +50,9 @@ document.getElementById('name').onkeydown = function(event) {
 function setUpSheets(sid) {
   async: false;
   var gs_sid = sid
-  var gs_clid = '64846370604-7gnht5k99v2qt9fbrbqsqtka294jjqod.apps.googleusercontent.com'; // Enter your API Client ID here
-  var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
-  var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
+  var gs_clid = service.gs_clid; // Enter your API Client ID here
+  var gs_clis = service.gs_clis; // Enter your API Client Secret here
+  var gs_rtok = service.gs_rtok; // Enter your OAuth Refresh Token here
   var gs_atok = false;
   var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + ':batchUpdate';
   var gs_body = '{"requests":[{"addSheet":{"properties":{"title":"SIGN-OUT"}}},{"addSheet":{"properties":{"title":"SIGN-IN"}}},{"deleteSheet":{"sheetId":0}}]}';
@@ -89,9 +89,9 @@ function addRecord(sid) {
   $.get('Sheets.txt', function(data) {
     async: false;
     var gs_sid = sid;
-    var gs_clid = '64846370604-7gnht5k99v2qt9fbrbqsqtka294jjqod.apps.googleusercontent.com'; // Enter your API Client ID here
-    var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
-    var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
+    var gs_clid = service.gs_clid; // Enter your API Client ID here
+    var gs_clis = service.gs_clis; // Enter your API Client Secret here
+    var gs_rtok = service.gs_rtok; // Enter your OAuth Refresh Token here
     var gs_atok = false;
     var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-IN!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     var gs_body = '{"majorDimension":"ROWS", "values":[[' + data + ']]}';
