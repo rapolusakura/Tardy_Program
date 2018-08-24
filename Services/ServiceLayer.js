@@ -46,7 +46,7 @@ function addRecord(sid, isSigningIn) {
     var gs_rtok = service.gs_rtok; // Enter your OAuth Refresh Token here
     var gs_atok = false;
     var gs_url = ""
-    if isSigningIn {
+    if (isSigningIn == true) {
       gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-IN!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     } else {
       gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-OUT!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
