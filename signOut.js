@@ -16,8 +16,8 @@ document.getElementById('name').onkeydown = function(event) {
             $.post("quickstart.php", {
               name: name
             }, function(spreadsheetID) {
-              //setUpSheets(spreadsheetID);
-              addRecord(spreadsheetID);
+              setUpSheets(spreadsheetID);
+              //addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {
@@ -61,6 +61,7 @@ function setUpSheets(sid) {
       xxhr.onload = function() {
         if (xxhr.status == 200) {
           // Success
+          addRecord(sid);
           //$('#message').html('<p>Row Added!</p>');
         } else {
           // Fail
