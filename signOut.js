@@ -17,7 +17,7 @@ document.getElementById('name').onkeydown = function(event) {
               name: name
             }, function(spreadsheetID) {
               setUpSheets(spreadsheetID);
-              addRecord(spreadsheetID);
+              //addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {

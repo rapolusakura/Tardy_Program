@@ -21,7 +21,7 @@ document.getElementById('name').onkeydown = function(event) {
             }, function(spreadsheetID) {
               setUpSheets(spreadsheetID);
               //when you get this callback, call the setUpSheets method and then in that call back, add the record.
-              addRecord(spreadsheetID);
+              //addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {
@@ -123,19 +123,4 @@ function addRecord(sid) {
     };
     xhr.send();
   }, 'text');
-}
-
-function getCurrentDate() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1; //January is 0!
-  var yyyy = today.getFullYear();
-  if (dd < 10) {
-    dd = '0' + dd
-  }
-  if (mm < 10) {
-    mm = '0' + mm
-  }
-  today = mm + '-' + dd + '-' + yyyy;
-  return today;
 }
