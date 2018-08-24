@@ -16,8 +16,8 @@ document.getElementById('name').onkeydown = function(event) {
             $.post("quickstart.php", {
               name: name
             }, function(spreadsheetID) {
-              setUpSheets(spreadsheetID);
-              //addRecord(spreadsheetID);
+              //setUpSheets(spreadsheetID);
+              addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {
