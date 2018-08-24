@@ -46,6 +46,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </div>
 <script type="text/javascript" src="sheets.js"></script>
 <script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="signOut.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <img src = "logo.png" class = "nonprint"></img>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>

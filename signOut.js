@@ -1,12 +1,9 @@
 //If enter is pressed
-$.ajaxSetup({
-  cache: false
-});
 document.getElementById('name').onkeydown = function(event) {
   if (event.keyCode == 13) {
     var name = $('input#name').val();
     if ($.trim(name) != '') {
-      $.post('print.php', {
+      $.post('confirmSignOut.php', {
         name: name
       }, function(data) {
         $('div#name-data').text(data);
@@ -29,14 +26,6 @@ document.getElementById('name').onkeydown = function(event) {
           }
         });
         //prints textfile
-        var text_to_print = open('DVHS_Tardy_Registration.txt');
-        text_to_print.onload = function() {
-
-          text_to_print.print();
-          setTimeout(function() {
-            text_to_print.close();
-          }, 1);
-        };
         setTimeout(function() {
           document.getElementsByName('name').focus();
         }, 1);
@@ -53,7 +42,7 @@ function addRecord(sid) {
     var gs_clis = 'Wpjhj1zvnulizzotjtjXxILW'; // Enter your API Client Secret here
     var gs_rtok = '1/rPj6l1t7WEg0yEohQwUueJXejRwltVycHxp0_wgdIWah_7vEcj2JM0WvfVlLHFq_'; // Enter your OAuth Refresh Token here
     var gs_atok = false;
-    var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-IN!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
+    var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-OUT!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     var gs_body = '{"majorDimension":"ROWS", "values":[[' + data + ']]}';
     // HTTP Request Token Refresh
     var xhr = new XMLHttpRequest();
