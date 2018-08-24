@@ -11,10 +11,9 @@
 <link rel="stylesheet" href="font.css">
 <style>
 .tablink {
-    background-color: #666;
+    background-color: #fffff0;
     color: Black;
     float: left;
-    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -33,9 +32,6 @@
     padding: 50px;
     text-align: center;
 }
-
-#SIGN-IN {background-color:BLUE;}
-#SIGN-OUT {background-color:YELLOW;}
 
 img {
 float:right;
@@ -66,14 +62,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 	<button class="tablink">SIGN-IN</button>
 	<button class="tablink" onclick="window.location.href='signOut.php'" id="defaultOpen">SIGN-OUT</button>
-	
+
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
 			<h4><div align="left"></div></h4>
-  <div class="column left">
+  <div class="column left" style = "padding: 30px">
     <img src= "wildcat.jpg" class = "nonprint" id ="picture"></img>
   </div>
-  <div class="column right">
+  <div class="column right" style = "padding: 30px">
 		<h5 class = "nonprint">Enter Student ID#:</h5>
 		<input style  = "padding: 16px" onkeyup="search()" autofocus class = "nonprint search" type="text" id = "name" name = "name" autocomplete = "off" placeholder="ex. 123456"></input>
 		<br></br><pre><h5><div style = "printer" id ="name-data"></div></h5></pre>

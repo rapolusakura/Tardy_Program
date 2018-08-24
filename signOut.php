@@ -10,6 +10,30 @@
 <link rel="stylesheet" href="google.css">
 <link rel="stylesheet" href="font.css">
 <style>
+.tablink {
+    background-color: #fffff0;
+    color: Black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #888;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: Black;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
 img {
 float:right;
 padding-right: 1.55cm;
@@ -29,14 +53,23 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	<img class = "nonprint" src="banner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Sign Out</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
-	<input type="button" id = "print" class = "nonprint" style = "padding: 16px" value = "SIGN IN" onclick="window.location.href='main.php'"></input><br></br>
+	<div id="SIGN-IN" class="tabcontent">
+		<h3>SIGN-IN</h3>
+	</div>
+
+	<div id="SIGN-OUT" class="tabcontent">
+		<h3>SIGN-OUT</h3>
+	</div>
+
+	<button class="tablink" onclick="window.location.href='main.php'">SIGN-IN</button>
+	<button class="tablink" id="defaultOpen">SIGN-OUT</button>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
 			<h4><div align="left"></div></h4>
-  <div class="column left">
+  <div class="column left" style = "padding: 30px">
     <img src= "wildcat.jpg" class = "nonprint" id ="picture"></img>
   </div>
-  <div class="column right">
+  <div class="column right" style = "padding: 30px">
 		<h5 class = "nonprint">Enter Student ID#:</h5>
 		<input style  = "padding: 16px" onkeyup="search()" autofocus class = "nonprint search" type="text" id = "name" name = "name" autocomplete = "off" placeholder="ex. 123456"></input>
 		<br></br><pre><h5><div style = "printer" id ="name-data"></div></h5></pre>
