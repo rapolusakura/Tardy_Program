@@ -10,6 +10,33 @@
 <link rel="stylesheet" href="google.css">
 <link rel="stylesheet" href="font.css">
 <style>
+.tablink {
+    background-color: #666;
+    color: Black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #888;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: Black;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#SIGN-IN {background-color:BLUE;}
+#SIGN-OUT {background-color:YELLOW;}
+
 img {
 float:right;
 padding-right: 1.55cm;
@@ -29,7 +56,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	<img class = "nonprint" src="banner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Tardy Registration</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
-	<input type="button" id = "print" class = "nonprint" style = "padding: 16px" value = "SIGN OUT" onclick="window.location.href='signOut.php'"></input><br></br>
+	<div id="SIGN-IN" class="tabcontent">
+	  <h3>SIGN-IN</h3>
+	</div>
+
+	<div id="SIGN-OUT" class="tabcontent">
+	  <h3>SIGN-OUT</h3>
+	</div>
+
+	<button class="tablink">SIGN-IN</button>
+	<button class="tablink" onclick="window.location.href='signOut.php'" id="defaultOpen">SIGN-OUT</button>
+	
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
 			<h4><div align="left"></div></h4>
