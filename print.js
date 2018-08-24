@@ -55,7 +55,7 @@ function setUpSheets(sid) {
   var gs_rtok = service.gs_rtok; // Enter your OAuth Refresh Token here
   var gs_atok = false;
   var gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + ':batchUpdate';
-  var gs_body = '{"requests":[{"addSheet":{"properties":{"title":"SIGN-OUT"}}},{"addSheet":{"properties":{"title":"SIGN-IN"}}},{"deleteSheet":{"sheetId":0}}]}';
+  var gs_body = '{"requests":[{"addSheet":{"properties":{"title":"SIGN-IN"}}},{"addSheet":{"properties":{"title":"SIGN-OUT"}}},{"deleteSheet":{"sheetId":0}}]}';
   // HTTP Request Token Refresh
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://www.googleapis.com/oauth2/v4/token?client_id=' + gs_clid + '&client_secret=' + gs_clis + '&refresh_token=' + gs_rtok + '&grant_type=refresh_token');
