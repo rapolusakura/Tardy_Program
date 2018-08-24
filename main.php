@@ -10,23 +10,10 @@
 <link rel="stylesheet" href="google.css">
 <link rel="stylesheet" href="font.css">
 <style>
-.selectedTablink {
+.tablink {
     background-color: #fffff0;
     color: Black;
     float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 50%;
-}
-
-.notSelectedTablink {
-    background-color: #111;
-    color: white;
-    float: left;
-    border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -73,8 +60,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	  <h3>SIGN-OUT</h3>
 	</div>
 
-	<button class="selectedTablink">SIGN-IN</button>
-	<button class="notSelectedTablink" onclick="window.location.href='signOut.php'" id="defaultOpen">SIGN-OUT</button>
+	<button class="tablink">SIGN-IN</button>
+	<button class="tablink" onclick="window.location.href='signOut.php'" id="defaultOpen">SIGN-OUT</button>
   <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
