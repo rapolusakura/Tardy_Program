@@ -40,7 +40,7 @@
 			echo "\nGrade: " . $row["grade"];
 			echo "\nDate: " . date("Y-m-d");
 			echo " \nTime: " . date("h:i:sa");
-			echo "\n\nStudent was successfully logged at " . date("h:i:sa");
+			echo "\n\n" . $row["first_name"]. " " . $row["last_name"]. " was successfully logged at " . date("h:i:sa");
 		}
 	}
 	mysqli_close($conn);
