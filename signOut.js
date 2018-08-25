@@ -1,4 +1,7 @@
 //If enter is pressed
+$.ajaxSetup({
+  cache: false
+});
 document.getElementById('name').onkeydown = function(event) {
   if (event.keyCode == 13) {
     var name = $('input#name').val();
@@ -10,6 +13,7 @@ document.getElementById('name').onkeydown = function(event) {
         document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
         $.get('date.txt', function(date) {
+          console.log(date)
           //checks if today's date is the same as the date written into the text file
           if (today != date) {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt

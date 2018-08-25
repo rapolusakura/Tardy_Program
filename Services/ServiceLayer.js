@@ -38,7 +38,7 @@ function setUpSheets(sid, isSigningIn) {
 }
 
 function addRecord(sid, isSigningIn) {
-  $.get('../Sheets.txt', function(data) {
+  $.get('Sheets.txt', function(data) {
     async: false;
     var gs_sid = sid;
     var gs_clid = service.gs_clid; // Enter your API Client ID here
