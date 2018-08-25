@@ -39,8 +39,6 @@ function setUpSheets(sid, isSigningIn) {
 
 function addRecord(sid, isSigningIn) {
   $.get('Sheets.txt', function(data) {
-    console.log(sid)
-    console.log(isSigningIn)
     async: false;
     var gs_sid = sid;
     var gs_clid = service.gs_clid; // Enter your API Client ID here
@@ -49,10 +47,8 @@ function addRecord(sid, isSigningIn) {
     var gs_atok = false;
     var gs_url = ""
     if (isSigningIn) {
-      console.log("this person is signing in")
       gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-IN!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     } else {
-      console.log("this person is signing out")
       gs_url = 'https://sheets.googleapis.com/v4/spreadsheets/' + gs_sid + '/values/SIGN-OUT!A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED';
     }
     var gs_body = '{"majorDimension":"ROWS", "values":[[' + data + ']]}';

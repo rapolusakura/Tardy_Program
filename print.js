@@ -20,8 +20,6 @@ document.getElementById('name').onkeydown = function(event) {
               name: name
             }, function(spreadsheetID) {
               setUpSheets(spreadsheetID, true);
-              //when you get this callback, call the setUpSheets method and then in that call back, add the record.
-              //addRecord(spreadsheetID);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {

@@ -25,6 +25,7 @@ document.getElementById('name').onkeydown = function(event) {
             });
           } else {
             $.get('SpreadsheetID.txt', function(sid) {
+              console.log(sid)
               addRecord(sid, false); // Enter your Google Sheet ID here - only field that changes daily
             }, 'text');
           }
