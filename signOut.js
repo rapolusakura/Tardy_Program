@@ -13,7 +13,6 @@ document.getElementById('name').onkeydown = function(event) {
         document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
         $.get('date.txt', function(date) {
-          console.log(date)
           //checks if today's date is the same as the date written into the text file
           if (today != date) {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt
@@ -38,18 +37,3 @@ document.getElementById('name').onkeydown = function(event) {
     }
   }
 };
-
-function getCurrentDate() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1; //January is 0!
-  var yyyy = today.getFullYear();
-  if (dd < 10) {
-    dd = '0' + dd
-  }
-  if (mm < 10) {
-    mm = '0' + mm
-  }
-  today = mm + '-' + dd + '-' + yyyy;
-  return today;
-}

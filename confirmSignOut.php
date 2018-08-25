@@ -26,7 +26,7 @@
 			//write to textfile for offline access
 			$fileName = 'Late_Student_Records/'.date('m-d-Y').'.txt';
 			$myfile = fopen($fileName, "a+") or die("Unable to open file!");
-			$txt = "IN: ". date("Y-m-d"). "\t". date("h:i:sa"). "\t". $row["grade"]. "\t". $row["first_name"]. "\t" . $row["last_name"]. "\t" .$_POST['name']. "\r\n";
+			$txt = "OUT: ". date("Y-m-d"). "\t". date("h:i:sa"). "\t". $row["grade"]. "\t". $row["first_name"]. "\t" . $row["last_name"]. "\t" .$_POST['name']. "\r\n";
 			fwrite($myfile, $txt);
 			fclose($myfile);
 
