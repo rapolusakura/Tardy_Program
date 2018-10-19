@@ -1,0 +1,6 @@
+IN: 2018-08-26	10:24:15pm	12	Sakura	Rapolu	218114
+IN: 2018-08-26	10:24:18pm	12	Sakura	Rapolu	218114
+OUT: 2018-08-26	10:24:24pm	12	Sakura	Rapolu	218114
+OUT: 2018-08-26	10:24:49pm	12	Sakura	Rapolu	218114
+IN: 2018-08-26	10:24:57pm	12	Sakura	Rapolu	218114
+IN: 2018-08-26	10:25:08pm	12	Sakura	Rapolu	218114
