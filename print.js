@@ -23,9 +23,13 @@ document.getElementById('name').onkeydown = function(event) {
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });
           } else {
-            $.get('SpreadsheetID.txt', function(sid) {
-              addRecord(sid, true); // Enter your Google Sheet ID here - only field that changes daily
-            }, 'text');
+            $.post("retrieveSID.php", {}, function(spreadsheetID) {
+              addRecord(spreadsheetID, true);
+              $('#response').html('<p>Spreadsheet was last updated on ' + spreadsheetID + '.</p>');
+            });
+            // $.get('SpreadsheetID.txt', function(sid) {
+            //   addRecord(sid, true); // Enter your Google Sheet ID here - only field that changes daily
+            // }, 'text');
           }
         });
         //prints textfile
