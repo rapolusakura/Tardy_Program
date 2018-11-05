@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+$cookie_name = "SAKURA";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
 <html>
 <head>
 <title>Tardy Registration</title>
@@ -28,6 +32,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <body>
 	<img class = "nonprint" src="chsbanner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	CHS Tardy Registration</h1>
+	<?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">

@@ -28,6 +28,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <body>
 	<img class = "nonprint" src="mvhsBanner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	MVHS Tardy Registration</h1>
+	<?php
+	echo "Value is: " . count($_COOKIE);
+	?>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
