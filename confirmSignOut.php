@@ -1,7 +1,7 @@
 <?php
 	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
-	//adds student to late table
+	//adds student to sign-out table
 	$result = $conn->query("
 		INSERT INTO `sign-out`(`first_name`, `last_name`, `grade`)
 		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`
