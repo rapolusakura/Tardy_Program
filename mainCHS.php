@@ -54,13 +54,13 @@ if(!isset($_COOKIE["school_id"])) {
 		<h4><div id="message"></div></h4>
   </div>
 </div>
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
-</script>
+<script type="text/javascript" src="Services/ServiceLayer.js"></script>
 <script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="Constants.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
-<script type="text/javascript" src = "create.js"></script>
+<img src = "logo.png" class = "nonprint"></img>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
