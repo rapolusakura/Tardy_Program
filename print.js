@@ -16,9 +16,7 @@ document.getElementById('name').onkeydown = function(event) {
           //checks if today's date is the same as the date written into the text file
           if (today != date) {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt
-            $.post("quickstart.php", {
-              name: name
-            }, function(spreadsheetID) {
+            $.post("quickstart.php", {}, function(spreadsheetID) {
               setUpSheets(spreadsheetID, true);
               $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
             });

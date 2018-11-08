@@ -1,7 +1,7 @@
 <?php
 	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
-	//adds student to late table
+  //gets specific spreadsheet ID for the school 
 
 	$result = $conn->query("
 		SELECT `spreadsheet_id`.`spreadsheet-id`
@@ -12,7 +12,7 @@
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			//format textfile to print as a slip
-			echo $row["spreadsheet-id"]; 
+			echo $row["spreadsheet-id"];
 		}
 	}
 	mysqli_close($conn);

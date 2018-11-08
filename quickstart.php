@@ -1,4 +1,3 @@
-
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 date_default_timezone_set('America/Los_Angeles');
@@ -18,7 +17,7 @@ $client = getClient();
 $driveService = new Google_Service_Drive($client);
 
 // Creates the spreadsheet into the TeamDrive folder
-$folderId = '0B6bfTKkhBq23anA2ejNZYzhEQVE';
+$folderId = getFolderId();
 $fileMetadata = new Google_Service_Drive_DriveFile(array(
     'name' => date("m-d-Y"),
     'mimeType' => 'application/vnd.google-apps.spreadsheet',
@@ -29,11 +28,18 @@ $file = $driveService->files->create($fileMetadata, array(
     'fields' => 'id'));
 printf($file->id);
 
-// Write newly created SpreadSheet ID into a textfile to be accessed by print.js
-$myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
-$txt = $file->id;
-fwrite($myfile, $txt);
-fclose($myfile);
+require 'connect.php';
+//new
+$result = $conn->query("
+  UPDATE `spreadsheet_id`
+  SET `spreadsheet_id`.`spreadsheet-id` = " . $file->id."
+  WHERE `spreadsheet_id`.`school-id` = " . $_COOKIE["school_id"]);
+
+// // Write newly created SpreadSheet ID into a textfile to be accessed by print.js
+// $myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
+// $txt = $file->id;
+// fwrite($myfile, $txt);
+// fclose($myfile);
 
 // Write today's date into date.txt to determine current spreadsheets
 $myfile = fopen("date.txt", "w") or die("Unable to open file!");
@@ -42,9 +48,9 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 // Imports the data from the student table
-require 'connect.php';
-$conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
-mysqli_close($conn);
+
+// $conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
+// mysqli_close($conn);
 
 //helper functions
 
