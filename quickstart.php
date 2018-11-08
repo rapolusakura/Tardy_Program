@@ -46,8 +46,23 @@ require 'connect.php';
 $conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
 mysqli_close($conn);
 
-
 //helper functions
+
+function getFolderId() {
+  if ($_COOKIE["school_id"] == "Dougherty Valley High School") {
+    return '1IZ98wKB5b7ef_f7e2hd8ZfT4T3krCpBg'
+  }
+  elseif ($_COOKIE["school_id"] == "Monte Vista High School") {
+    return '135M7iSGvegDkjI_OEY97da09BwnZ-Rjg'
+  }
+  elseif ($_COOKIE["school_id"] == "San Ramon Valley High School") {
+    return '1Ak7YhtrtjpMFLG7Vszy5PuUo4ZA1ddcc'
+  }
+  elseif ($_COOKIE["school_id"] == "California High School") {
+    return '1yprflwp_pX9Ix1eHwE3u3sRR3K8nIzb-'
+  }
+}
+
 function getClient() {
   $client = new Google_Client();
   $client->setApplicationName(APPLICATION_NAME);
