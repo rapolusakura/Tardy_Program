@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require 'connect.php';
 date_default_timezone_set('America/Los_Angeles');
 
 define('APPLICATION_NAME', 'Drive API PHP Quickstart');
@@ -28,11 +29,10 @@ $file = $driveService->files->create($fileMetadata, array(
     'fields' => 'id'));
 printf($file->id);
 
-require 'connect.php';
 //new
 $result = $conn->query("
   UPDATE `spreadsheet_id`
-  SET `spreadsheet_id`.`spreadsheet-id` = " . $file->id."
+  SET `spreadsheet_id`.`spreadsheet-id` = " . $file->id . "
   WHERE `spreadsheet_id`.`school-id` = " . $_COOKIE["school_id"]);
 
 // // Write newly created SpreadSheet ID into a textfile to be accessed by print.js
@@ -56,16 +56,16 @@ fclose($myfile);
 
 function getFolderId() {
   if ($_COOKIE["school_id"] == "Dougherty Valley High School") {
-    return '1IZ98wKB5b7ef_f7e2hd8ZfT4T3krCpBg'
+    return '1IZ98wKB5b7ef_f7e2hd8ZfT4T3krCpBg';
   }
   elseif ($_COOKIE["school_id"] == "Monte Vista High School") {
-    return '135M7iSGvegDkjI_OEY97da09BwnZ-Rjg'
+    return '135M7iSGvegDkjI_OEY97da09BwnZ-Rjg';
   }
   elseif ($_COOKIE["school_id"] == "San Ramon Valley High School") {
-    return '1Ak7YhtrtjpMFLG7Vszy5PuUo4ZA1ddcc'
+    return '1Ak7YhtrtjpMFLG7Vszy5PuUo4ZA1ddcc';
   }
   elseif ($_COOKIE["school_id"] == "California High School") {
-    return '1yprflwp_pX9Ix1eHwE3u3sRR3K8nIzb-'
+    return '1yprflwp_pX9Ix1eHwE3u3sRR3K8nIzb-';
   }
 }
 
