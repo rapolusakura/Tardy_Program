@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+$school_id = "Monte Vista High School";
+setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
 <html>
 <head>
 <title>Tardy Registration</title>
@@ -29,8 +32,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	<img class = "nonprint" src="mvhsBanner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	MVHS Tardy Registration</h1>
 	<?php
-	echo "Value is: " . $_COOKIE["SAKURA"];
-	?>
+if(!isset($_COOKIE["school_id"])) {
+    echo "Not set!";
+} else {
+    echo "Current school identifier: " . $_COOKIE["school_id"];
+}
+?>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
@@ -47,19 +54,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 		<h4><div id="message"></div></h4>
   </div>
 </div>
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA-Z5rzhwqwmX9HNSoF0dDes4VGdgFcqKo",
-    authDomain: "intrepid-vista-188201.firebaseapp.com",
-    databaseURL: "https://intrepid-vista-188201.firebaseio.com",
-    projectId: "intrepid-vista-188201",
-    storageBucket: "",
-    messagingSenderId: "908096432316"
-  };
-  firebase.initializeApp(config);
-</script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>

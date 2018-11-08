@@ -93,7 +93,7 @@ header {
 		float:left;
 }
 body {
-		background: linear-gradient(to bottom, #1E90FF, #99ddff, #e6e6e6) fixed;
+		background: linear-gradient(to bottom, #444444, #99ddff, #e6e6e6) fixed;
 }
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 8px}
@@ -107,9 +107,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Dropdown</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="main.php">Dougherty Valley</a>
+    <a href="main.php">Dougherty Valley High School</a>
     <a href="mainCHS.php">California High School</a>
     <a href="mainMVHS.php">Monte Vista High School</a>
+    <a href="mainSRVHS.php">San Ramon Valley High School</a>
   </div>
 </div>
 
