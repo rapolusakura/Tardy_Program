@@ -1,6 +1,7 @@
 
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require 'connect.php';
 date_default_timezone_set('America/Los_Angeles');
 
 define('APPLICATION_NAME', 'Drive API PHP Quickstart');
@@ -42,7 +43,6 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 // Imports the data from the student table
-require 'connect.php';
 $conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
 mysqli_close($conn);
 
