@@ -30,10 +30,11 @@ $file = $driveService->files->create($fileMetadata, array(
 printf($file->id);
 
 //new
-$result = $conn->query("
-  UPDATE `spreadsheet_id`
-  SET `spreadsheet_id`.`spreadsheet-id` = " . $file->id . "
-  WHERE `spreadsheet_id`.`school-id` = " . $_COOKIE["school_id"]);
+  $result = $conn->query("
+    UPDATE `spreadsheet_id`
+    SET `spreadsheet_id`.`spreadsheet-id` = '" . $file->id."'
+    WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+  ");
 
 // // Write newly created SpreadSheet ID into a textfile to be accessed by print.js
 // $myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
