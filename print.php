@@ -3,7 +3,7 @@
 	date_default_timezone_set("America/Los_Angeles");
 	//adds student to late table
 	$result = $conn->query("
-		INSERT INTO `late`(`first_name`, `last_name`, `grade`)
+		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`)
 		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`
 		FROM `student`
 		WHERE `student`.`id` = '" . mysqli_real_escape_string($conn, trim($_POST['name']))."'

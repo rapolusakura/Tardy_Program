@@ -36,12 +36,6 @@ printf($file->id);
     WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
   ");
 
-// // Write newly created SpreadSheet ID into a textfile to be accessed by print.js
-// $myfile = fopen("SpreadsheetID.txt", "w") or die("Unable to open file!");
-// $txt = $file->id;
-// fwrite($myfile, $txt);
-// fclose($myfile);
-
 // Write today's date into date.txt to determine current spreadsheets
 $myfile = fopen("date.txt", "w") or die("Unable to open file!");
 $txt = date("m-d-Y");
