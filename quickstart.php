@@ -29,12 +29,11 @@ $file = $driveService->files->create($fileMetadata, array(
     'fields' => 'id'));
 printf($file->id);
 
-//new
-  $result = $conn->query("
-    UPDATE `spreadsheet_id`
-    SET `spreadsheet_id`.`spreadsheet-id` = '" . $file->id."'
-    WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
-  ");
+$result = $conn->query("
+  UPDATE `spreadsheet_id`
+  SET `spreadsheet_id`.`spreadsheet-id` = '" . $file->id."'
+  WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+");
 
 // Write today's date into date.txt to determine current spreadsheets
 $myfile = fopen("date.txt", "w") or die("Unable to open file!");
@@ -45,7 +44,7 @@ fclose($myfile);
 // Imports the data from the student table
 
 // $conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
-// mysqli_close($conn);
+mysqli_close($conn);
 
 //helper functions
 

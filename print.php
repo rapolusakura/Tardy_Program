@@ -2,12 +2,12 @@
 	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
 	//adds student to late table
+
 	$result = $conn->query("
-		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`)
-		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`
+		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`, `time`)
+		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, CURRENT_TIMESTAMP
 		FROM `student`
-		WHERE `student`.`id` = '" . mysqli_real_escape_string($conn, trim($_POST['name']))."'
-	");
+		WHERE `student`.`id` = " . mysqli_real_escape_string($conn, trim($_POST['name'])));
 
 	$result = $conn->query("
 		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`

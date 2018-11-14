@@ -4,7 +4,7 @@
   //gets specific spreadsheet ID for the school
 
   $result = $conn->query("
-    SELECT * FROM `late` ORDER BY time DESC LIMIT 1
+    SELECT * FROM `" . $_COOKIE["school_id"]. "` ORDER BY time DESC LIMIT 1
   ");
 
 	if ($result->num_rows > 0) {
@@ -19,6 +19,9 @@
         echo "false";
       }
 		}
-	}
+	} else {
+    echo "false";
+  }
+
 	mysqli_close($conn);
 ?>

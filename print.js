@@ -12,22 +12,19 @@ document.getElementById('name').onkeydown = function(event) {
         $('div#name-data').text(data);
         document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
-        $.get('date.txt', function(date) {
-          //checks if today's date is the same as the date written into the text file
-          if (today != date) {
+        $.post('spreadsheetIsCurrent.php', {}, function(isCurrent) {
+          if (isCurrent == "false") {
             //creates new spreadsheets, loads new student file, writes today's date into date.txt
             $.post("quickstart.php", {}, function(spreadsheetID) {
               setUpSheets(spreadsheetID, true);
-              $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
+              $('#response').html('<p>Spreadsheet wa FALSE BITCHs last updated on ' + today + '.</p>');
             });
           } else {
             $.post("retrieveSID.php", {}, function(spreadsheetID) {
               addRecord(spreadsheetID, true);
-              $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
+              $('#response').html(isCurrent);
+              //$('#response').html('<p>Spreadsheet was last bitchhhupdated on ' + today + '.</p>');
             });
-            // $.get('SpreadsheetID.txt', function(sid) {
-            //   addRecord(sid, true); // Enter your Google Sheet ID here - only field that changes daily
-            // }, 'text');
           }
         });
         //prints textfile
