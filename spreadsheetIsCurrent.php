@@ -13,10 +13,10 @@
       $dayOfLastEntry = explode(" ", $row["time"])[0];
       $currentDate = date("Y-m-d");
       if ($dayOfLastEntry == $currentDate) {
-        echo "spreadsheet is up to date!";
+        echo "true";
       }
       else {
-        echo "spreadsheet needs to be changed";
+        echo "false";
       }
 		}
 	}
