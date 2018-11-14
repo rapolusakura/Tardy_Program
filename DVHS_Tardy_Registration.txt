@@ -1,4 +1,4 @@
-Name: dummy person
-Grade: 9
+Name: Sakura Rapolu
+Grade: 12
 Date: 2018-11-13
-Time: 10:21:53pm
+Time: 10:29:11pm

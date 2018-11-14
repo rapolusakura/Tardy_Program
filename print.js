@@ -12,13 +12,12 @@ document.getElementById('name').onkeydown = function(event) {
           //creates new spreadsheets, loads new student file, writes today's date into date.txt
           $.post("quickstart.php", {}, function(spreadsheetID) {
             setUpSheets(spreadsheetID, true);
-            $('#response').html('<p>Spreadsheet wa FALSE BITCHs last updated on ' + today + '.</p>');
+            $('#response').html('<p>New spreadsheet has just been created.</p>');
           });
         } else {
           $.post("retrieveSID.php", {}, function(spreadsheetID) {
             addRecord(spreadsheetID, true);
-            $('#response').html(isCurrent);
-            //$('#response').html('<p>Spreadsheet was last bitchhhupdated on ' + today + '.</p>');
+            $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
           });
         }
         $.post('print.php', {

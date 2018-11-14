@@ -35,12 +35,6 @@ $result = $conn->query("
   WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
 ");
 
-// Write today's date into date.txt to determine current spreadsheets
-$myfile = fopen("date.txt", "w") or die("Unable to open file!");
-$txt = date("m-d-Y");
-fwrite($myfile, $txt);
-fclose($myfile);
-
 // Imports the data from the student table
 
 // $conn->query("LOAD DATA LOCAL INFILE 'extract(2).csv' INTO TABLE student IGNORE 1 LINES (id, first_name, last_name, grade);");
