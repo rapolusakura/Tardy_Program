@@ -2,11 +2,12 @@
 	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
 	//adds student to sign-out table
+	$id_num = mysqli_real_escape_string($conn, trim($_POST['name']));
 	$result = $conn->query("
-		INSERT INTO `sign-out`(`first_name`, `last_name`, `grade`)
-		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`
+		INSERT INTO `sign-out`(`first_name`, `last_name`, `grade`, `id`)
+		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, " .$id_num. "
 		FROM `student`
-		WHERE `student`.`id` = '" . mysqli_real_escape_string($conn, trim($_POST['name']))."'
+		WHERE `student`.`id` = '" .$id_num."'
 	");
 
 	$result = $conn->query("
