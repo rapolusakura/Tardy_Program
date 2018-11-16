@@ -24,10 +24,12 @@
 			fclose($myfile);
 
 			//format entry for Google Sheets
-			$myfile = fopen("Sheets.txt", "w") or die("Unable to open file!");
 			$txt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
-			fwrite($myfile, $txt);
-			fclose($myfile);
+			$conn->query("
+			  UPDATE `spreadsheet_id`
+			  SET `spreadsheet_id`.`sheets-format` = '" . $txt."'
+			  WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+			");
 
 			//write to textfile for offline access
 			$fileName = 'Late_Student_Records/'.date('m-d-Y').'.txt';
