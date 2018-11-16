@@ -17,11 +17,13 @@
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
-			//format textfile to print as a slip
-			$myfile = fopen("DVHS_Tardy_Registration.txt", "w") or die("Unable to open file!");
+			//format database record to print as a slip
 			$txt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa");
-			fwrite($myfile, $txt);
-			fclose($myfile);
+			$conn->query("
+				UPDATE `spreadsheet_id`
+				SET `spreadsheet_id`.`slip-format` = '" . $txt."'
+				WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+			");
 
 			//format entry for Google Sheets
 			$txt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
