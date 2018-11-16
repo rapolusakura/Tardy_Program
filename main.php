@@ -4,7 +4,7 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <html>
 <head>
-<title>Tardy Registration</title>
+<title>SRVUSD Attendance Registration</title>
 <link rel="stylesheet" href="index.css">
 <link rel="shortcut icon" href="wildcat.ico"/>
 <meta charset="UTF-8">
@@ -66,7 +66,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body>
 	<img class = "nonprint" src="banner.png"></img>
-	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Tardy Registration</h1>
+	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	SRVUSD Attendance Registration</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
 	<div id="SIGN-IN" class="tabcontent">
 	  <h3>SIGN-IN</h3>

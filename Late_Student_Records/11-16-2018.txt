@@ -43,3 +43,4 @@ IN: 2018-11-16	01:36:46pm	9	dummy	person	123
 IN: 2018-11-16	01:38:49pm	12	Sakura	Rapolu	218114
 IN: 2018-11-16	01:39:50pm	5	alice	blanket	2
 IN: 2018-11-16	01:40:13pm	5	alice	blanket	2
+OUT: 2018-11-16	01:50:41pm	12	Sakura	Rapolu	218114
