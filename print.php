@@ -33,22 +33,14 @@
 			fwrite($myfile, $txt);
 			fclose($myfile);
 
-			//format database record to print as a slip
-			$txt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa");
-			// echo '<script>';
-			// echo 'var textToPrint = ' . json_encode($txt) . ';';
-			// echo '</script>';
-			// $conn->query("
-			// 	UPDATE `spreadsheet_id`
-			// 	SET `spreadsheet_id`.`slip-format` = '" . $txt."'
-			// 	WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
-			// ");
+			//format string to print as a slip
+			$slipTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "<br>Grade: " . $row["grade"] . "<br>Date: " . date("Y-m-d") . "<br>Time: " . date("h:i:sa");
+			$htmlTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa") . "\n\n" . $row["first_name"]
+			. " " . $row["last_name"]. " was successfully signed in at " . date("h:i:sa");
 
-			echo "Name: " . $row["first_name"]. " " . $row["last_name"];
-			echo "\nGrade: " . $row["grade"];
-			echo "\nDate: " . date("Y-m-d");
-			echo " \nTime: " . date("h:i:sa");
-			echo "\n\n" . $row["first_name"]. " " . $row["last_name"]. " was successfully signed in at " . date("h:i:sa");
+			$myArr = array($htmlTxt, $slipTxt);
+			$myJSON = json_encode($myArr, JSON_PRETTY_PRINT);
+			echo $myJSON;
 		}
 	}
 	mysqli_close($conn);

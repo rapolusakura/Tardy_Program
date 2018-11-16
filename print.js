@@ -23,12 +23,12 @@ document.getElementById('name').onkeydown = function(event) {
         $.post('print.php', {
           name: name
         }, function(data) {
-          $('div#name-data').text(data);
+          var parsedData = JSON.parse(data)
+          $('div#name-data').text(parsedData[0]);
           document.getElementsByName('name')[0].value = "";
           //prints slip
-          var txt = "<?php echo $txt?>";
-          var myWindow = window.open("", "Tardy Slip", "width=200,height=100");
-          myWindow.document.write(txt);
+          var myWindow = window.open("", "Tardy Slip");
+          myWindow.document.write(parsedData[1]);
           myWindow.print();
           myWindow.close();
 
