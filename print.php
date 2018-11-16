@@ -17,13 +17,6 @@
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
-			//format database record to print as a slip
-			$txt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa");
-			$conn->query("
-				UPDATE `spreadsheet_id`
-				SET `spreadsheet_id`.`slip-format` = '" . $txt."'
-				WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
-			");
 
 			//format entry for Google Sheets
 			$txt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
@@ -39,6 +32,17 @@
 			$txt = "IN: ". date("Y-m-d"). "\t". date("h:i:sa"). "\t". $row["grade"]. "\t". $row["first_name"]. "\t" . $row["last_name"]. "\t" .$_POST['name']. "\r\n";
 			fwrite($myfile, $txt);
 			fclose($myfile);
+
+			//format database record to print as a slip
+			$txt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa");
+			// echo '<script>';
+			// echo 'var textToPrint = ' . json_encode($txt) . ';';
+			// echo '</script>';
+			// $conn->query("
+			// 	UPDATE `spreadsheet_id`
+			// 	SET `spreadsheet_id`.`slip-format` = '" . $txt."'
+			// 	WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+			// ");
 
 			echo "Name: " . $row["first_name"]. " " . $row["last_name"];
 			echo "\nGrade: " . $row["grade"];

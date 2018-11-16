@@ -25,15 +25,13 @@ document.getElementById('name').onkeydown = function(event) {
         }, function(data) {
           $('div#name-data').text(data);
           document.getElementsByName('name')[0].value = "";
-          //prints textfile
-          var text_to_print = open('DVHS_Tardy_Registration.txt');
-          text_to_print.onload = function() {
+          //prints slip
+          var txt = "<?php echo $txt?>";
+          var myWindow = window.open("", "Tardy Slip", "width=200,height=100");
+          myWindow.document.write(txt);
+          myWindow.print();
+          myWindow.close();
 
-            text_to_print.print();
-            setTimeout(function() {
-              text_to_print.close();
-            }, 1);
-          };
           setTimeout(function() {
             document.getElementsByName('name').focus();
           }, 1);
