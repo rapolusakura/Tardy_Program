@@ -13,28 +13,23 @@ function signOut() {
       $('div#name-data').text(data);
       document.getElementsByName('name')[0].value = "";
       var today = getCurrentDate();
-      $.get('date.txt', function(date) {
-        //checks if today's date is the same as the date written into the text file
-        if (today != date) {
+      $.post('spreadsheetIsCurrent.php', {}, function(isCurrent) {
+        if (isCurrent == "false") {
           //creates new spreadsheets, loads new student file, writes today's date into date.txt
-          $.post("quickstart.php", {
-            name: name
-          }, function(spreadsheetID) {
+          $.post("quickstart.php", {}, function(spreadsheetID) {
             setUpSheets(spreadsheetID, false);
-            //addRecord(spreadsheetID);
-            $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
+            $('#response').html('<p>New spreadsheet has just been created.</p>');
           });
         } else {
-          $.get('SpreadsheetID.txt', function(sid) {
-            console.log(sid)
-            addRecord(sid, false); // Enter your Google Sheet ID here - only field that changes daily
-          }, 'text');
+          $.post("retrieveSID.php", {}, function(spreadsheetID) {
+            addRecord(spreadsheetID, false);
+            $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
+          });
         }
+        setTimeout(function() {
+          document.getElementsByName('name').focus();
+        }, 1);
       });
-      //prints textfile
-      setTimeout(function() {
-        document.getElementsByName('name').focus();
-      }, 1);
     });
   }
 }
