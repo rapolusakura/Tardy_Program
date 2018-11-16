@@ -67,7 +67,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <body>
 	<img class = "nonprint" src="banner.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	SRVUSD Attendance Registration</h1>
-	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
+	<h4 class="w3-large w3-main w3-padding-large nonprint" id="subtitle">	Sign students into admin efficiently. </h4>
 	<div id="SIGN-IN" class="tabcontent">
 	  <h3>SIGN-IN</h3>
 	</div>
@@ -93,12 +93,43 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 		<h4><div id="message"></div></h4>
   </div>
 </div>
+<script>
+var isSigningIn = true;
+
+function signInMode() {
+  document.getElementById("sign-in").className = "selectedTablink";
+  document.getElementById("sign-out").className = "notSelectedTablink";
+  document.getElementById("subtitle").innerHTML = "CURRENTLY SIGNING IN"
+  document.body.style.background = "linear-gradient(to bottom, #1E90FF, #99ddff, #e6e6e6) fixed";
+  isSigningIn = true;
+}
+
+function signOutMode() {
+  document.getElementById("sign-out").className = "selectedTablink";
+  document.getElementById("sign-in").className = "notSelectedTablink";
+  document.getElementById("subtitle").innerHTML = "CURRENTLY SIGNING OUT"
+  document.body.style.background = "linear-gradient(to bottom, #ffa500, #ffff00, #ffffff) fixed";
+  isSigningIn = false;
+}
+
+document.getElementById('name').onkeydown = function(event) {
+  if (event.keyCode == 13) {
+    if(isSigningIn) {
+      signIn();
+    } else {
+      signOut();
+    }
+  }
+};
+
+</script>
 <script type="text/javascript" src="Services/ServiceLayer.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="Constants.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
+<script type="text/javascript" src = "signOut.js"></script>
 <img src = "logo.png" class = "nonprint"></img>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
