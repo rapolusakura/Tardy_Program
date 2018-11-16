@@ -32,9 +32,8 @@ function signIn() {
         myWindow.document.write(parsedData[1]);
         myWindow.print();
         myWindow.close();
-
         setTimeout(function() {
-          document.getElementsByName('name').focus();
+          document.getElementById("name").focus();
         }, 1);
       });
     });

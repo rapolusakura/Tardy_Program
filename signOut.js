@@ -27,7 +27,7 @@ function signOut() {
           });
         }
         setTimeout(function() {
-          document.getElementsByName('name').focus();
+          document.getElementById("name").focus();
         }, 1);
       });
     });
