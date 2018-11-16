@@ -38,7 +38,7 @@ function setUpSheets(sid, isSigningIn) {
 }
 
 function addRecord(sid, isSigningIn) {
-  $.get('Sheets.txt', function(data) {
+  $.post('retrieveSheetsFormat.php', {}, function(data) {
     async: false;
     var gs_sid = sid;
     var gs_clid = service.gs_clid; // Enter your API Client ID here
@@ -79,5 +79,5 @@ function addRecord(sid, isSigningIn) {
       }
     };
     xhr.send();
-  }, 'text');
+  });
 }
