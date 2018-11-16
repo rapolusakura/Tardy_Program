@@ -76,8 +76,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	  <h3>SIGN-OUT</h3>
 	</div>
 
-	<button class="selectedTablink">SIGN-IN</button>
-	<button class="notSelectedTablink" onclick="window.location.href='signOut.php'" id="defaultOpen">SIGN-OUT</button>
+	<button class="selectedTablink" onclick="signInMode()" id="sign-in">SIGN-IN</button>
+	<button class="notSelectedTablink" onclick="signOutMode()" id="sign-out">SIGN-OUT</button>
   <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
