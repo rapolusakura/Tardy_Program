@@ -54,3 +54,5 @@ OUT: 2018-11-16	03:37:57pm	5	alice	blanket	2
 OUT: 2018-11-16	03:38:04pm	8	bob	jone	1
 OUT: 2018-11-16	03:38:07pm	8	bob	jone	1
 OUT: 2018-11-16	03:42:05pm	9	dummy	person	123
+IN: 2018-11-16	03:44:14pm	9	dummy	person	123
+IN: 2018-11-16	03:44:17pm	5	alice	blanket	2
