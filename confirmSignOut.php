@@ -4,11 +4,10 @@
 	//adds student to sign-out table
 	$id_num = mysqli_real_escape_string($conn, trim($_POST['name']));
 	$result = $conn->query("
-		INSERT INTO `sign-out`(`first_name`, `last_name`, `grade`, `id`)
-		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, " .$id_num. "
+		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`, `time`,`in-or-out`)
+		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, CURRENT_TIMESTAMP, 'OUT'
 		FROM `student`
-		WHERE `student`.`id` = '" .$id_num."'
-	");
+		WHERE `student`.`id` = " . $id_num);
 
 	$result = $conn->query("
 		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`

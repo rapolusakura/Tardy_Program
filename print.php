@@ -4,8 +4,8 @@
 	//adds student to late table
 	$id_num = mysqli_real_escape_string($conn, trim($_POST['name']));
 	$result = $conn->query("
-		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`, `time`)
-		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, CURRENT_TIMESTAMP
+		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`, `time`,`in-or-out`)
+		SELECT `student`.`first_name`,  `student`.`last_name`, `student`.`grade`, CURRENT_TIMESTAMP, 'IN'
 		FROM `student`
 		WHERE `student`.`id` = " . $id_num);
 
