@@ -12,56 +12,11 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="google.css">
 <link rel="stylesheet" href="font.css">
+<link rel="stylesheet" href="tab.css">
 <style>
-.selectedTablink {
-    background-color: #fffff0;
-    color: Black;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 50%;
-}
-
-.notSelectedTablink {
-    background-color: #111;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 50%;
-}
-
-.tablink:hover {
-    background-color: #888;
-}
-
-/* Style the tab content */
-.tabcontent {
-    color: Black;
-    display: none;
-    padding: 50px;
-    text-align: center;
-}
-
-img {
-float:right;
-padding-right: 1.55cm;
-padding-top: 0.5cm;
-}
-header {
-		float:left;
-}
 body {
 		background: linear-gradient(to bottom, #1E90FF, #99ddff, #e6e6e6) fixed;
 }
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 8px}
 </style>
 </head>
 <body>
