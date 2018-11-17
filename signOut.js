@@ -4,7 +4,6 @@ $.ajaxSetup({
 });
 
 function signOut() {
-  console.log("sign out pressed");
   var name = $('input#name').val();
   if ($.trim(name) != '') {
     $.post('confirmSignOut.php', {

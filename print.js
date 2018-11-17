@@ -4,7 +4,6 @@ $.ajaxSetup({
 });
 
 function signIn() {
-  console.log("sign in pressed");
   var name = $('input#name').val();
   if ($.trim(name) != '') {
     var today = getCurrentDate();
