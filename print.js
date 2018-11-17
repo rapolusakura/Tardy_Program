@@ -1,9 +1,7 @@
-//If enter is pressed
-$.ajaxSetup({
-  cache: false
-});
-
 function signIn() {
+  $.ajaxSetup({
+    cache: false
+  });
   var name = $('input#name').val();
   if ($.trim(name) != '') {
     var today = getCurrentDate();

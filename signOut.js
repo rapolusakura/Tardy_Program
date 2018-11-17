@@ -1,9 +1,7 @@
-//If enter is pressed
-$.ajaxSetup({
-  cache: false
-});
-
 function signOut() {
+  $.ajaxSetup({
+    cache: false
+  });
   var name = $('input#name').val();
   if ($.trim(name) != '') {
     $.post('confirmSignOut.php', {
