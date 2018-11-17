@@ -4,7 +4,7 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <html>
 <head>
-<title>SRVUSD Attendance Registration</title>
+<title>DVHS Attendance Registration</title>
 <link rel="stylesheet" href="index.css">
 <link rel="shortcut icon" href="wildcat.ico"/>
 <meta charset="UTF-8">
@@ -21,7 +21,7 @@ body {
 </head>
 <body>
 	<img class = "nonprint" src="banner.png"></img>
-	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	SRVUSD Attendance Registration</h1>
+	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	DVHS Attendance Registration</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint" id="subtitle">CURRENTLY SIGNING IN</h4>
 	<div id="SIGN-IN" class="tabcontent">
 	  <h3>SIGN-IN</h3>
@@ -57,6 +57,6 @@ body {
 <script type="text/javascript" src = "signOut.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <img src = "logo.png" class = "nonprint"></img>
-<div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
+<div style = "padding: 30px; margin-top: 12em;" class = nonprint id="self-promo"><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
