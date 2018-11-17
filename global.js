@@ -4,8 +4,9 @@ function signInMode() {
   document.getElementById("sign-in").className = "selectedTablink";
   document.getElementById("sign-out").className = "notSelectedTablink";
   document.getElementById("subtitle").innerHTML = "CURRENTLY SIGNING IN"
-  document.body.style.background = "linear-gradient(to bottom, #1E90FF, #99ddff, #e6e6e6) fixed";
+  document.body.style.background = "linear-gradient(to bottom, #f2f2f2, #e6e6e6, #2d862d, #01458c) fixed";
   isSigningIn = true;
+  document.getElementById("self-promo").style.color = "#e6e6e6";
   document.getElementById("name").focus();
 }
 
@@ -15,6 +16,7 @@ function signOutMode() {
   document.getElementById("subtitle").innerHTML = "CURRENTLY SIGNING OUT"
   document.body.style.background = "linear-gradient(to bottom, #ffa500, #ffff00, #ffffff) fixed";
   isSigningIn = false;
+  document.getElementById("self-promo").style.color = "black";
   document.getElementById("name").focus();
 }
 
