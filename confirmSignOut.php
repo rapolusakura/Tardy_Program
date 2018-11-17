@@ -1,7 +1,7 @@
 <?php
 	require 'connect.php';
 	date_default_timezone_set("America/Los_Angeles");
-	//adds student to sign-out table
+	//adds student to school's table with identifier, signing OUT
 	$id_num = mysqli_real_escape_string($conn, trim($_POST['name']));
 	$result = $conn->query("
 		INSERT INTO `" . $_COOKIE["school_id"]. "`(`first_name`, `last_name`, `grade`, `time`,`in-or-out`)
