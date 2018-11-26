@@ -30,9 +30,9 @@ $file = $driveService->files->create($fileMetadata, array(
 printf($file->id);
 
 $result = $conn->query("
-  UPDATE `spreadsheet_id`
-  SET `spreadsheet_id`.`spreadsheet-id` = '" . $file->id."'
-  WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+  UPDATE `info`
+  SET `info`.`spreadsheet-id` = '" . $file->id."'
+  WHERE `info`.`school-id` = '" . $_COOKIE["school_id"]."'
 ");
 
 // Imports the data from the student table

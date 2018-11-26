@@ -21,9 +21,9 @@
 			//format entry for Google Sheets
 			$txt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
 			$conn->query("
-			  UPDATE `spreadsheet_id`
-			  SET `spreadsheet_id`.`sheets-format` = '" . $txt."'
-			  WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+			  UPDATE `info`
+			  SET `info`.`sheets-format` = '" . $txt."'
+			  WHERE `info`.`school-id` = '" . $_COOKIE["school_id"]."'
 			");
 
 			//write to textfile for offline access

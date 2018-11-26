@@ -4,9 +4,9 @@
   //gets specific spreadsheet ID for the school
 
 	$result = $conn->query("
-		SELECT `spreadsheet_id`.`sheets-format`
-		FROM `spreadsheet_id`
-		WHERE `spreadsheet_id`.`school-id` = '" . $_COOKIE["school_id"]."'
+		SELECT `info`.`sheets-format`
+		FROM `info`
+		WHERE `info`.`school-id` = '" . $_COOKIE["school_id"]."'
 	");
 
 	if ($result->num_rows > 0) {
