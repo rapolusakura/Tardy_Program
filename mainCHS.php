@@ -4,7 +4,7 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <html>
 <head>
-<title>Tardy Registration</title>
+<title>CHS Attendance Registration</title>
 <link rel="stylesheet" href="index.css">
 <link rel="shortcut icon" href="wildcat.ico"/>
 <meta charset="UTF-8">
@@ -12,33 +12,28 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="google.css">
 <link rel="stylesheet" href="font.css">
+<link rel="stylesheet" href="tab.css">
 <style>
-img {
-float:right;
-padding-right: 1.55cm;
-padding-top: 0.5cm;
-}
-header {
-		float:left;
-}
 body {
 		background: linear-gradient(to bottom right, #fff0e6, #ff751a, #1a0a00) fixed;
 }
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 8px}
 </style>
 </head>
 <body>
-	<img class = "nonprint" src="chsbanner.png"></img>
-	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	CHS Tardy Registration</h1>
-	<?php
-if(!isset($_COOKIE["school_id"])) {
-    echo "Not set!";
-} else {
-    echo "Current school identifier: " . $_COOKIE["school_id"];
-}
-?>
-	<h4 class="w3-large w3-main w3-padding-large nonprint">	Sign students into admin efficiently. </h4>
+	<img class = "nonprint" src="chsBanner.png"></img>
+	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	CHS Attendance Registration</h1>
+	<h4 class="w3-large w3-main w3-padding-large nonprint" id="subtitle">	CURRENTLY SIGNING IN </h4>
+	<div id="SIGN-IN" class="tabcontent">
+	  <h3>SIGN-IN</h3>
+	</div>
+
+	<div id="SIGN-OUT" class="tabcontent">
+	  <h3>SIGN-OUT</h3>
+	</div>
+
+	<button class="selectedTablink" onclick="signInMode()" id="sign-in">SIGN-IN</button>
+	<button class="notSelectedTablink" onclick="signOutMode()" id="sign-out">SIGN-OUT</button>
+  <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">
 			<h4><div align="left"></div></h4>
@@ -55,12 +50,12 @@ if(!isset($_COOKIE["school_id"])) {
   </div>
 </div>
 <script type="text/javascript" src="Services/ServiceLayer.js"></script>
+<script type="text/javascript" src="global.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <script type="text/javascript" src="Constants.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
-<img src = "logo.png" class = "nonprint"></img>
+<script type="text/javascript" src = "signOut.js"></script>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
