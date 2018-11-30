@@ -31,7 +31,7 @@ body {
 	  <h3>SIGN-OUT</h3>
 	</div>
 
-	<button class="selectedTablink" onclick="signInMode()" id="sign-in">SIGN-IN</button>
+	<button class="selectedTablink" onclick="signInMode('California High School')" id="sign-in">SIGN-IN</button>
 	<button class="notSelectedTablink" onclick="signOutMode()" id="sign-out">SIGN-OUT</button>
   <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
@@ -56,6 +56,6 @@ body {
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src = "print.js"></script>
 <script type="text/javascript" src = "signOut.js"></script>
-<div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
+<div style = "padding: 30px; margin-top: 12em;" id="self-promo" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>

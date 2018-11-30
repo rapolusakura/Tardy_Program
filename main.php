@@ -31,7 +31,7 @@ body {
 	  <h3>SIGN-OUT</h3>
 	</div>
 
-	<button class="selectedTablink" onclick="signInMode()" id="sign-in">SIGN-IN</button>
+	<button class="selectedTablink" onclick="signInMode('Dougherty Valley High School')" id="sign-in">SIGN-IN</button>
 	<button class="notSelectedTablink" onclick="signOutMode()" id="sign-out">SIGN-OUT</button>
   <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
