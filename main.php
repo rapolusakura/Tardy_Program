@@ -1,6 +1,6 @@
 <?php
 $school_id = "Dougherty Valley High School";
-setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
+setcookie("school_id", $school_id, "/"); // 86400 = 1 day
 ?>
 <html>
 <head>
