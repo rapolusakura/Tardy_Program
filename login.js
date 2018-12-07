@@ -1,28 +1,39 @@
 function login() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var school;
-  switch (document.getElementById("myInput").value) {
-    case "Dougherty Valley High School":
-      school = "main";
-      break;
-    case "Monte Vista High School":
-      school = "mainMVHS";
-      break;
-    case "San Ramon Valley High School":
-      school = "mainSRVHS";
-      break;
-    case "California High School":
-      school = "mainCHS";
-      break;
-    default:
-      school = "";
-  }
-  if (username == "sakura" && password == "123" && school != "") {
-    window.location.href = "http://localhost/Tardy_Program/" + school + ".php";
-  } else {
-    document.getElementById("loginStatus").innerHTML = "Username/password is invalid, or school is not selected.";
-  }
+  var school = document.getElementById("myInput").value;
+  //var hyphenSchool = document.getElementById("myInput").value.replace(/ /g, "_");
+  $.post('checkCredentials.php', {
+    username: username,
+    password: password,
+    school_id: school
+  }, function(isValid) {
+    if (isValid == "true") {
+      switch (document.getElementById("myInput").value) {
+        case "Dougherty Valley High School":
+          school = "main";
+          break;
+        case "Monte Vista High School":
+          school = "mainMVHS";
+          break;
+        case "San Ramon Valley High School":
+          school = "mainSRVHS";
+          break;
+        case "California High School":
+          school = "mainCHS";
+          break;
+        default:
+          school = "";
+      }
+      $.post('setCookie.php', {
+        school_id: document.getElementById("myInput").value //hypen school
+      }, function() {});
+      window.location.href = "http://localhost:81/Tardy_Program/" + school + ".php"; //change too
+    } else {
+      //document.getElementById("loginStatus").innerHTML = "Username/password is invalid, or school is not selected.";
+      document.getElementById("loginStatus").innerHTML = isValid;
+    }
+  });
 }
 
 function autocomplete(inp, arr) {

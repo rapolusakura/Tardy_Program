@@ -1,5 +1,5 @@
 <?php
-if(!isset($_COOKIE["school_id"])) {
+if(!isset($_COOKIE["school_id"]) || $_COOKIE["school_id"]!="Dougherty_Valley_High_School") {
     echo "You do not have permission to access this site. Must login through sc-tardy.srvusd.net";
 } else { ?>
 	<html>

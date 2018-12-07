@@ -23,6 +23,7 @@
     <br><br>
     <h5 id="loginStatus"></h5>
 <script type="text/javascript" src="login.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
