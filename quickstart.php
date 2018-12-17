@@ -44,7 +44,7 @@ mysqli_close($conn);
 
 function getFolderId() {
   if ($_COOKIE["school_id"] == "Dougherty Valley High School") {
-    return '1IZ98wKB5b7ef_f7e2hd8ZfT4T3krCpBg';
+    return '1VEyfadhJKkM-XGWZypIHnVs9AlmjDsFI';
   }
   elseif ($_COOKIE["school_id"] == "Monte Vista High School") {
     return '135M7iSGvegDkjI_OEY97da09BwnZ-Rjg';

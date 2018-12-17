@@ -1,7 +1,7 @@
 <?php
-$school_id = "Monte Vista High School";
-setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
-?>
+if(!isset($_COOKIE["school_id"]) || $_COOKIE["school_id"]!="Monte Vista High School") {
+    echo "You do not have permission to access this site. Must login through sc-tardy.srvusd.net";
+} else { ?>
 <html>
 <head>
 <title>MVHS Attendance Registration</title>
@@ -58,3 +58,5 @@ body {
 <div style = "padding: 30px; margin-top: 12em;" class = nonprint id="self-promo"><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
+<?php }
+?>

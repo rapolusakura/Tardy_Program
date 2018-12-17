@@ -1,7 +1,7 @@
 <?php
-$school_id = "San Ramon Valley High School";
-setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
-?>
+if(!isset($_COOKIE["school_id"]) || $_COOKIE["school_id"]!="San Ramon Valley High School") {
+    echo "You do not have permission to access this site. Must login through sc-tardy.srvusd.net";
+} else { ?>
 <html>
 <head>
 <title>SRVHS Attendance Registration</title>
@@ -15,7 +15,7 @@ setcookie("school_id", $school_id, time() + (86400 * 30), "/"); // 86400 = 1 day
 <link rel="stylesheet" href="tab.css">
 <style>
 body {
-	background: linear-gradient(to bottom right, #ffff99, #ffff66, #009900, #1a3300) fixed;
+	background: linear-gradient(to bottom right, #f2f7f3, #e6f4e9, #d9f7e0, #92f4a8) fixed;
 }
 </style>
 </head>
@@ -58,3 +58,5 @@ body {
 <div style = "padding: 30px; margin-top: 12em;" id = "self-promo" class = nonprint><h5> Created by Sakura Rapolu C/O 2018</h5></div>
 </body>
 </html>
+<?php }
+?>

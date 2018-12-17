@@ -13,10 +13,6 @@
       if($_POST['username'] == $row["username"] && password_verify($_POST['password'], $row["password"])) {
         echo "true";
       } else {
-        echo $_POST['username'];
-        echo $_POST['password'];
-        echo $row["password"];
-        echo $row["username"]; 
         echo "false";
       }
 		}
