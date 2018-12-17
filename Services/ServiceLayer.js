@@ -18,7 +18,6 @@ function setUpSheets(sid, isSigningIn) {
     if (gs_atok) {
       var xxhr = new XMLHttpRequest();
       xxhr.open('POST', gs_url);
-      xxhr.setRequestHeader('Content-length', gs_body.length);
       xxhr.setRequestHeader('Content-type', 'application/json');
       xxhr.setRequestHeader('Authorization', 'OAuth ' + gs_atok);
       xxhr.onload = function() {
@@ -63,7 +62,6 @@ function addRecord(sid, isSigningIn) {
       if (gs_atok) {
         var xxhr = new XMLHttpRequest();
         xxhr.open('POST', gs_url);
-        xxhr.setRequestHeader('Content-length', gs_body.length);
         xxhr.setRequestHeader('Content-type', 'application/json');
         xxhr.setRequestHeader('Authorization', 'OAuth ' + gs_atok);
         xxhr.onload = function() {
