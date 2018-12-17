@@ -15,7 +15,7 @@ if(!isset($_COOKIE["school_id"]) || $_COOKIE["school_id"]!="San Ramon Valley Hig
 <link rel="stylesheet" href="tab.css">
 <style>
 body {
-	background: linear-gradient(to bottom right, #f2f7f3, #e6f4e9, #d9f7e0, #92f4a8) fixed;
+	background: linear-gradient(to bottom right, #ffff99, #ffff66, #009900, #1a3300) fixed; 
 }
 </style>
 </head>
@@ -32,7 +32,7 @@ body {
 	</div>
 
 	<button class="selectedTablink" onclick="signInMode('San Ramon Valley High School')" id="sign-in">SIGN-IN</button>
-	<button class="notSelectedTablink" onclick="signOutMode()" id="sign-out">SIGN-OUT</button>
+	<button class="notSelectedTablink" onclick="signOutMode('San Ramon Valley High School')" id="sign-out">SIGN-OUT</button>
   <br></br>
 	<h4><div style="margin-right:5em;" align="right" id="response"></div></h4>
 <div class="row">

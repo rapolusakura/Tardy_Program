@@ -15,12 +15,12 @@ if(!isset($_COOKIE["school_id"]) || $_COOKIE["school_id"]!="Monte Vista High Sch
 <link rel="stylesheet" href="tab.css">
 <style>
 body {
-		background: linear-gradient(to bottom right, #ffffff, #ffb3b3, #ff1a1a, #800000) fixed;
+		background: linear-gradient(to bottom right, #ffffff, #f2f2f2, #ff4d4d, #b30000) fixed;
 }
 </style>
 </head>
 <body>
-	<img class = "nonprint" src="mvhsBanner.png"></img>
+	<img class = "nonprint" src="mvhsLogo.png"></img>
 	<h1 class="w3-xxxlarge w3-main w3-padding-large nonprint">	MVHS Attendance Registration</h1>
 	<h4 class="w3-large w3-main w3-padding-large nonprint" id="subtitle">	CURRENTLY SIGNING IN </h4>
 	<div id="SIGN-IN" class="tabcontent">
