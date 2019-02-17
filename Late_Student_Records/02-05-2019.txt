@@ -1,0 +1,4 @@
+IN: 2019-02-05	09:43:45pm	8	bob	jone	1
+IN: 2019-02-05	09:43:58pm	5	alice	blanket	2
+IN: 2019-02-05	09:45:12pm	8	bob	jone	1
+OUT: 2019-02-05	09:45:15pm	8	bob	jone	1
