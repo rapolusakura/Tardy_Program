@@ -4,13 +4,13 @@ function signOut() {
   });
   var name = $('input#name').val();
   if ($.trim(name) != '') {
-    $.post('confirmSignOut.php', {
-      name: name
-    }, function(data) {
-      $('div#name-data').text(data);
-      document.getElementsByName('name')[0].value = "";
-      var today = getCurrentDate();
-      $.post('spreadsheetIsCurrent.php', {}, function(isCurrent) {
+    $.post('spreadsheetIsCurrent.php', {}, function(isCurrent) {
+      $.post('confirmSignOut.php', {
+        name: name
+      }, function(data) {
+        $('div#name-data').text(data);
+        document.getElementsByName('name')[0].value = "";
+        var today = getCurrentDate();
         if (isCurrent == "false") {
           //creates new spreadsheets, loads new student file, writes today's date into date.txt
           $.post("quickstart.php", {}, function(spreadsheetID) {
