@@ -38,8 +38,9 @@
 			$slipTxt = "<br>***SIGN-OUT***<br>" . "Name: " . $row["first_name"]. " " . $row["last_name"] . "<br>Grade: " . $row["grade"] . "<br>Date: " . date("Y-m-d") . "<br>Time: " . date("h:i:sa");
 			$htmlTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa") . "\n\n" . $row["first_name"]
 			. " " . $row["last_name"]. " was successfully signed out at " . date("h:i:sa");
-
-			$myArr = array($htmlTxt, $needsSlip, $slipTxt);
+			$sheetsTxt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
+			
+			$myArr = array($htmlTxt, $sheetsTxt, $needsSlip, $slipTxt);
 			$myJSON = json_encode($myArr, JSON_PRETTY_PRINT);
 			echo $myJSON;
 		}

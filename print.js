@@ -8,18 +8,18 @@ function signIn() {
       $.post('print.php', {
         name: name
       }, function(data) {
+        var parsedData = JSON.parse(data);
         if (isCurrent == "false") {
           $.post("quickstart.php", {}, function(spreadsheetID) {
-            setUpSheets(spreadsheetID, true);
+            setUpSheets(spreadsheetID, true, parsedData[2]);
             $('#response').html('<p>New spreadsheet has just been created.</p>');
           });
         } else {
           $.post("retrieveSID.php", {}, function(spreadsheetID) {
-            addRecord(spreadsheetID, true);
+            addRecord(spreadsheetID, true, parsedData[2]);
             $('#response').html('<p>Spreadsheet was last updated on ' + getCurrentDate() + '.</p>');
           });
         }
-        var parsedData = JSON.parse(data)
         $('div#name-data').text(parsedData[0]);
         document.getElementsByName('name')[0].value = "";
         //prints slip
