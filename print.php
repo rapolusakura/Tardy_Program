@@ -26,8 +26,8 @@
 
 			//format string to print as a slip
 			$slipTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "<br>Grade: " . $row["grade"] . "<br>Date: " . date("Y-m-d") . "<br>Time: " . date("h:i:sa");
-			$htmlTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa") . "\n\n" . $row["first_name"]
-			. " " . $row["last_name"]. " was successfully signed in at " . date("h:i:sa");
+			$htmlTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa") . "\n\n" .
+			$row["first_name"] . " " . $row["last_name"]. " was successfully signed in at " . date("h:i:sa");
 			$sheetsTxt = '"' . date("h:i:sa"). '","' . $row["first_name"]. '","' . $row["last_name"]. '","' . $row["grade"]. '","' .$_POST['name']. '"';
 
 			$myArr = array($htmlTxt, $slipTxt, $sheetsTxt);
