@@ -35,7 +35,7 @@
 			$needsSlip = $_COOKIE["school_id"] == "Monte Vista High School";
 
 			//format string to print as a slip
-			$slipTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "<br>Grade: " . $row["grade"] . "<br>Date: " . date("Y-m-d") . "<br>Time: " . date("h:i:sa");
+			$slipTxt = "<br>***SIGN-OUT***<br>" . "Name: " . $row["first_name"]. " " . $row["last_name"] . "<br>Grade: " . $row["grade"] . "<br>Date: " . date("Y-m-d") . "<br>Time: " . date("h:i:sa");
 			$htmlTxt = "Name: " . $row["first_name"]. " " . $row["last_name"] . "\nGrade: " . $row["grade"] . "\nDate: " . date("Y-m-d") . "\nTime: " . date("h:i:sa") . "\n\n" . $row["first_name"]
 			. " " . $row["last_name"]. " was successfully signed out at " . date("h:i:sa");
 
