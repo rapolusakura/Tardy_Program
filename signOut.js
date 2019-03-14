@@ -8,8 +8,6 @@ function signOut() {
       $.post('confirmSignOut.php', {
         name: name
       }, function(data) {
-        $('div#name-data').text(data);
-        document.getElementsByName('name')[0].value = "";
         var today = getCurrentDate();
         if (isCurrent == "false") {
           //creates new spreadsheets, loads new student file, writes today's date into date.txt
@@ -22,6 +20,16 @@ function signOut() {
             addRecord(spreadsheetID, false);
             $('#response').html('<p>Spreadsheet was last updated on ' + today + '.</p>');
           });
+        }
+        var parsedData = JSON.parse(data)
+        $('div#name-data').text(parsedData[0]);
+        document.getElementsByName('name')[0].value = "";
+        //prints slip
+        if (parsedData[1]) {
+          var myWindow = window.open("", "Sign-out Slip");
+          myWindow.document.write(parsedData[2]);
+          myWindow.print();
+          myWindow.close();
         }
         setTimeout(function() {
           document.getElementById("name").focus();
