@@ -25,6 +25,7 @@
 			  SET `info`.`sheets-format` = '" . $txt."'
 			  WHERE `info`.`school-id` = '" . $_COOKIE["school_id"]."'
 			");
+			
 
 			//write to textfile for offline access
 			$fileName = 'Late_Student_Records/'.date('m-d-Y').'.txt';
