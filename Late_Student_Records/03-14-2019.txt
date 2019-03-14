@@ -7,3 +7,14 @@ OUT: 2019-03-14	02:13:38pm	5	alice	blanket	2
 OUT: 2019-03-14	02:14:22pm	5	alice	blanket	2
 IN: 2019-03-14	02:15:05pm	9	dummy	person	123
 OUT: 2019-03-14	02:15:09pm	5	alice	blanket	2
+IN: 2019-03-14	02:53:13pm	9	dummy	person	123
+IN: 2019-03-14	02:53:46pm	5	alice	blanket	2
+IN: 2019-03-14	02:56:38pm	9	dummy	person	123
+OUT: 2019-03-14	02:57:19pm	5	alice	blanket	2
+IN: 2019-03-14	02:57:46pm	8	bob	jone	1
+OUT: 2019-03-14	02:58:09pm	5	alice	blanket	2
+OUT: 2019-03-14	03:01:06pm	12	Sakura	Rapolu	218114
+OUT: 2019-03-14	03:04:02pm	8	bob	jone	1
+IN: 2019-03-14	03:04:08pm	5	alice	blanket	2
+IN: 2019-03-14	03:04:54pm	12	Sakura	Rapolu	218114
+OUT: 2019-03-14	03:09:11pm	12	Sakura	Rapolu	218114
